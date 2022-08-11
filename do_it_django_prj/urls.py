@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import  static
 
 urlpatterns = [
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
     path('', include('single_pages.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) #위에가 리스트니깐 이것도 리스트로 들어 갈 것이다.

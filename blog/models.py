@@ -7,6 +7,8 @@ class Post(models.Model):
 
     created_at = models.DateTimeField(auto_now_add = True) #월,일,시,분,초를 기록할 수 있는
     updated_at = models.DateTimeField(auto_now = True)
+
+    head_image = models.ImageField(upload_to = 'blog/images/%Y/%m/%d/', blank = True) #blank는 null값 드가도 괜찮냐?
     # author: 추후 작성 예정
     def __str__(self):
         return f'[{self.pk}] {self.title}'
