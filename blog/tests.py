@@ -46,7 +46,7 @@ class TestView(TestCase):
             content = 'Hello World. We are the world.',
 
         )
-
+        self.assertEqual(Post.objects.count(), 1)
         self.assertEqual(post_001.get_absolute_url(), '/blog/1/')
 
         response = self.client.get(post_001.get_absolute_url())
