@@ -14,7 +14,8 @@ class Post(models.Model):
     head_image = models.ImageField(upload_to = 'blog/images/%Y/%m/%d/', blank = True) #blank는 null값 드가도 괜찮냐?
     file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)  # blank는 null값 드가도 괜찮냐?
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE) #on_delete = models.cascade: 작성자가 탈퇴를 하면은 작성한 글도 삭제할 것이다 라는 의미.
+    author = models.ForeignKey(User, null = True, on_delete=models.SET_NULL) #on_delete = models.cascade: 작성자가 탈퇴를 하면은 작성한 글도 삭제할 것이다 라는 의미.
+                                                                #on_delete=models.SET_NULL : 작성자가 탈퇴하면 그냥 게시물은 놔두고 작성자명을 null로 바꾼다.
     def __str__(self):
         return f'[{self.pk}] {self.title}::{self.author}'
 
