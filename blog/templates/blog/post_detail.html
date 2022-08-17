@@ -10,6 +10,11 @@
                         <!-- Post header-->
                         <header class="mb-4">
                             <!-- Post title-->
+                            {% if user.is_authenticated and user == post.author %}
+                                <a class = "btn btn-outline-success float-end" href="/blog/update_post/{{post.pk}}/" role="button"><i class = 'fas fa-pen>'></i>
+                                Edit Post
+                                </a>
+                            {% endif %}
                             <h1 class="fw-bolder mb-1">{{post.title}}</h1>
                            <h6 class="text-muted">{{post.hook_text}}</h6>
 
