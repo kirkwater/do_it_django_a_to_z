@@ -54,7 +54,7 @@ class PostCreate(LoginRequiredMixin,UserPassesTestMixin,CreateView):
                         tag.slug = slugify(t, allow_unicode = True)
                         tag.save()
                     self.object.tags.add(tag)
-                return response
+            return response
         else:
             return redirect('/blog/')
 class PostUpdate(LoginRequiredMixin, UpdateView):
@@ -98,6 +98,9 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
                 self.object.tags.add(tag)
 
         return response
+
+
+
 
 
 def category_page(request, slug):
