@@ -44,6 +44,12 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'markdownx',
 
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+
     'blog',
     'single_pages',
 ]
@@ -138,3 +144,35 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+)
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_LOGIN_ON_GET = 'True'
+LOGIN_REDIRECT_URL = '/blog/'
+
+
+  # Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '630296077333-e0k7r54hvi8t1crvls88lmjhldih4j3b.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    }
+}
+# application.properties
+
+
+

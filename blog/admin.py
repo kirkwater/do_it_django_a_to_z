@@ -1,8 +1,9 @@
 from django.contrib import admin
+from markdownx.admin import MarkdownxModelAdmin
 from .models import Post, Category, Tag
 # Register your models here.
 
-admin.site.register(Post)#어드민 사이트에서 포스트를 사용할 수 있게 정의
+admin.site.register(Post, MarkdownxModelAdmin)#어드민 사이트에서 포스트를 사용할 수 있게 정의
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = { 'slug': ('name',)}
