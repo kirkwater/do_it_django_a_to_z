@@ -160,7 +160,7 @@ class TestView(TestCase):
         categories_card = soup.find('div', id = 'categories-card')
         self.assertIn('Categories', categories_card.text)
         self.assertIn(
-            f'{self.category_programming} ({self.category_programming.post_set.count()})', categories_card.text
+            f'{self.category_programming} ({ self.category_programming.post_set.count()})', categories_card.text
         )
         self.assertIn(
             f'{self.category_music} ({self.category_music.post_set.count()})', categories_card.text
