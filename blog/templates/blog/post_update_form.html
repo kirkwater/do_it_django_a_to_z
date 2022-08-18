@@ -9,6 +9,8 @@
     <form method = "post" enctype = "multipart/form-data">{% csrf_token %}
         <table>
             {{form}}
+            <th><label for = "id_tags_str">Tags:</label></th> #th로 하면 글자가 굵어짐. th, td는 테이블 제작시 사용하는. 태그
+            <td><input type = "text" name = "tags_str" id = "id_tags_str" value = "{{tags_str_default}}"></td>
         </table>
         <button type = "submit" class = "btn btn-primary float-end">Submit</button>
     </form>
