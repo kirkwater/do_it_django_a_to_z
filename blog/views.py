@@ -7,6 +7,7 @@ from django.utils.text import slugify
 class PostList(ListView):
     model = Post
     ordering = '-pk'
+    paginate_by = 5
 
     def get_context_data(self, **kwargs): # **kwargs(딕셔너리형태로 받는다. **은 딕션너리 형태)
         context = super(PostList, self).get_context_data()
