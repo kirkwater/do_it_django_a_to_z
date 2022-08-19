@@ -9,6 +9,9 @@
     {% endif %}
               <h1>
                 Blog
+                {% if search_info %}
+                <small clas = "text-muted">{{search_info}}</small>
+                {% endif %}
                 {% if category %} <span class="badge bg-secondary">{{category}}</span>
                 {% endif %}
                 {% if tag %} <span class="badge bg-secondary"><i class="fa-solid fa-tags"></i>{{tag}} ({{tag.post_set.count}})</span>
