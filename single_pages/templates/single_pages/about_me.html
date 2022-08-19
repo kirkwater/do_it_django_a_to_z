@@ -1,17 +1,170 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>개발자 달타냥입니다.</title>
+    <title>누구인가?</title>
+
+    <link href = "{% static 'blog/bootstrap5/css/bootstrap.min.css' %}" rel = "stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/8539b76a2f.js" crossorigin="anonymous"></script>
+    <link href="{% static 'single_pages/css/about_me.css' %}" rel = "stylesheet" type="text/css">
 </head>
 <body>
-  <nav>
-    <a href = "/blog/">Blog</a>
-    <a href = "/about_me/">About me</a>
-  </nav>
-  <h1>안녕하세요. 달타냥입니다.</h1>
-  <h2>이력</h2>
-  <h2>Portfolio</h2>
-  <h3>아직 공사중입니다.</h3>
+        {% include 'blog/navbar.html' %}
+        <section>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1>안녕하세요 정현욱입니다.</h1>
+                        <br/>
+                        <p class="lead">
+                            미래의 프로그래머를 꿈꾸며 공부하는 중입니다.<br/>
+                            성장하는 모습을 저의 블로그를 통해 알아 보실 수 있습니다.
+                        </p>
+
+                        <ul>
+                            <li> Study</li>
+                            <ul>
+                                <li>&nbsp;Machine Learning</li>
+                                <li>&nbsp;django </li>
+                                <li>&nbsp;deep Learning </li>
+                            </ul>
+                            <br/>
+                            <li>Graduated</li>
+                            <ul>
+                                <li> &nbsp;Dong-A University Management Information Department</li>
+                            </ul>
+                            <br/>
+                            <li>Certification </li>
+                            <ul>
+                                <li>&nbsp;정보처리기능사</li>
+                                <li>&nbsp;정보처리기사</li>
+                                <li>&nbsp;컴퓨터 활용 1급</li>
+                                <li>&nbsp;기타 등등..</li>
+                                <br/>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="img-fluid" src="{% static 'single_pages/images/man1.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light margin-for-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>PORTFOLIO</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card" data-bs-toggle="modal" data-bs-target="#pic1">
+                            <img class="card-img-top" src="{% static 'single_pages/images/pic1.jpg' %}">
+                            <div class="card-body">
+                                <h5 class="card-title">마천루</h5>
+                                <p> 뉴욕 빌딩 사진</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card" data-bs-toggle="modal" data-bs-target="#pic2">
+                            <img class="card-img-top" src="{% static 'single_pages/images/pic2.jpg' %}">
+                            <div class="card-body">
+                                <h5 class="card-title">횡단보도</h5>
+                                <p>뉴욕 도심 속 횡단보도</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card" data-bs-toggle="modal" data-bs-target="#pic3">
+                            <img class="card-img-top" src="{% static 'single_pages/images/pic3.jpg' %}">
+                            <div class="card-body">
+                                <h5 class="card-title">브루클린교</h5>
+                                <p>브루클린교가 보이는 사진</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% include 'blog/footer.html' %}
+ >      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+                integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+                integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Modal 안하는데에는 다아 이유가 있다. -->
+        <div class="modal fade" id="pic1" tabindex="-1" role="dialog" aria-labelledby="pic1ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">마천루</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                              <div class="col-lg-8">
+                                <img class="card-img-top" src="{% static 'single_pages/images/pic1.jpg' %}">
+                              <div/>
+                              <div class="col-lg-4">
+                                  <p>뉴욕빌딩 사진.</p>
+                              <div/>
+                      </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="pic2" tabindex="-1" role="dialog" aria-labelledby="pic2ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">횡단보도</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                              <div class="col-lg-8">
+                                <img class="card-img-top" src="{% static 'single_pages/images/pic2.jpg' %}">
+                              <div/>
+                              <div class="col-lg-4">
+                                  <p>뉴욕 도심 속 횡단보도</p>
+                              <div/>
+                      </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="pic3" tabindex="-1" role="dialog" aria-labelledby="pic3ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">브루클린교</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                              <div class="col-lg-8">
+                                <img class="card-img-top" src="{% static 'single_pages/images/pic3.jpg' %}">
+                              <div/>
+                              <div class="col-lg-4">
+                                  <p>브루클린교가 보이는 사진</p>
+                              <div/>
+                      </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
 </body>
 </html>
